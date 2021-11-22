@@ -62,7 +62,7 @@ programCommand('upload')
   .option('-b, --batchSize <number>', 'Batch size - defaults to 1000')
   .option(
     '-s, --storage <string>',
-    'Database to use for storage (arweave, ipfs, aws)',
+    'Database to use for storage (arweave, nft.storage, ipfs, aws)',
     'arweave',
   )
   .option(
@@ -109,9 +109,16 @@ programCommand('upload')
         'aws selected as storage option but existing bucket name (--aws-s3-bucket) not provided.',
       );
     }
-    if (!(storage === 'arweave' || storage === 'ipfs' || storage === 'aws')) {
+    if (
+      !(
+        storage === 'arweave' ||
+        storage == 'nft.storage' ||
+        storage === 'ipfs' ||
+        storage === 'aws'
+      )
+    ) {
       throw new Error(
-        "Storage option must either be 'arweave', 'ipfs', or 'aws'.",
+        "Storage option must either be 'arweave', 'nft.storage', 'ipfs', or 'aws'.",
       );
     }
     const ipfsCredentials = {

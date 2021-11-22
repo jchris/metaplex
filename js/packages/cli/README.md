@@ -202,6 +202,14 @@ metaplex upload ~/nft-test/mini_drop --keypair ~/.config/solana/id.json
 ts-node cli upload ~/nft-test/mini_drop --keypair ~/.config/solana/id.json
 ```
 
+You can choose your preferred storage service with the `--storage` flag. For example, to use [NFT.Storage](https://nft.storage),
+set `--storage=nft.storage`:
+
+```
+metaplex upload ~/nft-test/mini_drop --keypair ~/.config/solana/id.json --storage=nft.storage
+ts-node cli upload ~/nft-test/mini_drop --keypair ~/.config/solana/id.json --storage=nft.storage
+```
+
 2. Verify everything is uploaded. Rerun the first command until it is.
 
 ```

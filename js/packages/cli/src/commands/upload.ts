@@ -12,6 +12,7 @@ import { loadCache, saveCache } from '../helpers/cache';
 import log from 'loglevel';
 import { awsUpload } from '../helpers/upload/aws';
 import { arweaveUpload } from '../helpers/upload/arweave';
+import { nftStorageUpload } from '../helpers/upload/nftstorage';
 import { ipfsCreds, ipfsUpload } from '../helpers/upload/ipfs';
 import { chunks } from '../helpers/various';
 
@@ -158,6 +159,13 @@ export async function upload(
                     awsS3Bucket,
                     image,
                     manifestBuffer,
+                  );
+                } else if (storage === 'nft.storage') {
+                  [link, imageLink] = await nftStorageUpload(
+                    walletKeyPair,
+                    env,
+                    image,
+                    manifest,
                   );
                 }
 
