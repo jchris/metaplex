@@ -1,7 +1,7 @@
 import {
   MetaplexAuthWithSecretKey,
   NFTStorageUploader,
-} from 'metaplex-dotstorage-auth';
+} from '@nftstorage/metaplex-auth';
 import { File } from '@web-std/file';
 import { getFilesFromPath } from 'files-from-path';
 import type { Keypair } from '@solana/web3.js';
