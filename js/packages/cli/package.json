@@ -46,6 +46,7 @@
     "@aws-sdk/client-s3": "^3.36.0",
     "@project-serum/anchor": "^0.17.0",
     "@metaplex/arweave-cost": "^1.0.4",
+    "@nftstorage/metaplex-auth": "^0.1.0",
     "@solana/spl-token": "^0.1.8",
     "@web-std/file": "^1.1.4",
     "arweave": "^1.10.16",
@@ -61,7 +62,6 @@
     "jsonschema": "^1.4.0",
     "lodash": "^4.17.21",
     "loglevel": "^1.7.1",
-    "metaplex-dotstorage-auth": "https://github.com/nftstorage/metaplex-dotstorage-auth#88bd173c468ef3b5c02362aa61ed0d3b78430a42",
     "merge-images": "^2.0.0",
     "node-fetch": "^2.6.1",
     "weighted": "^0.3.0"

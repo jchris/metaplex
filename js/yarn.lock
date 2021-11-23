@@ -5117,6 +5117,25 @@
   resolved "https://registry.yarnpkg.com/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-11.1.2.tgz#e15824405df137129918205e43cb5e9339589745"
   integrity sha512-e/pIKVdB+tGQYa1cW3sAeHm8gzEri/HYLZHT4WZojrUxgWXqx8pk7S7Xs47uBcFTqBDRvK3EcQpPLf3XdVsDdg==
 
+"@nftstorage/metaplex-auth@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@nftstorage/metaplex-auth/-/metaplex-auth-0.1.0.tgz#3b1c761bac8de93e45c6e8d140e4fbe121353581"
+  integrity sha512-JqAhQ2Rq+cFDAMgIBJhUTtQcnDDzlNWXZEAxIdgmuOPLszbFg0lJpcGomJYWwSw62TLNyJu7M4XwpwckuUM+bw==
+  dependencies:
+    "@ipld/car" "^3.1.19"
+    "@solana/web3.js" "^1.30.2"
+    "@web-std/fetch" "^2.1.2"
+    "@web-std/file" "^1.1.4"
+    carbites "^1.0.6"
+    files-from-path "^0.2.1"
+    ipfs-car "^0.5.9"
+    multiformats "^9.4.10"
+    p-retry "^5.0.0"
+    streaming-iterables "^6.0.0"
+    ts-command-line-args "^2.2.0"
+    tweetnacl "^1.0.3"
+    varint "^6.0.0"
+
 "@node-rs/helper@1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@node-rs/helper/-/helper-1.2.1.tgz#e079b05f21ff4329d82c4e1f71c0290e4ecdc70c"
@@ -18695,24 +18714,6 @@ mersenne-twister@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/mersenne-twister/-/mersenne-twister-1.1.0.tgz#f916618ee43d7179efcf641bec4531eb9670978a"
   integrity sha1-+RZhjuQ9cXnvz2Qb7EUx65Zwl4o=
-
-"metaplex-dotstorage-auth@https://github.com/nftstorage/metaplex-dotstorage-auth#88bd173c468ef3b5c02362aa61ed0d3b78430a42":
-  version "1.0.0"
-  resolved "https://github.com/nftstorage/metaplex-dotstorage-auth#88bd173c468ef3b5c02362aa61ed0d3b78430a42"
-  dependencies:
-    "@ipld/car" "^3.1.19"
-    "@solana/web3.js" "^1.30.2"
-    "@web-std/fetch" "^2.1.2"
-    "@web-std/file" "^1.1.4"
-    carbites "^1.0.6"
-    files-from-path "^0.2.1"
-    ipfs-car "^0.5.9"
-    multiformats "^9.4.10"
-    p-retry "^5.0.0"
-    streaming-iterables "^6.0.0"
-    ts-command-line-args "^2.2.0"
-    tweetnacl "^1.0.3"
-    varint "^6.0.0"
 
 methods@~1.1.2:
   version "1.1.2"
