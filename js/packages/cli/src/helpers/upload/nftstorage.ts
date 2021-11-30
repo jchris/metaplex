@@ -33,7 +33,7 @@ export async function nftStorageUpload(
 
   metadata.image = imageURL;
   if (metadata.properties && metadata.properties.files) {
-    metadata.properties.files = metadata.properties.files.map(f => {
+    metadata.properties.files = metadata.properties.files.flatMap(f => {
       // try to return a gateway link to each file in the properties array
       // if we've uploaded a file with the same name.
       if (f.uri) {
@@ -42,7 +42,10 @@ export async function nftStorageUpload(
         // if uri is equal to the original value of 'image' field,
         // use the image gateway URL
         if (filename === imageName) {
-          return { ...f, uri: imageURL };
+          return [
+            { ...f, uri: imageURL, cdn: true },
+            { ...f, uri: ipfsURI(res.rootCID, imageFile.name) },
+          ];
         }
 
         // if the uri matches the name of an uploaded file,
@@ -51,12 +54,15 @@ export async function nftStorageUpload(
           file => stripLeadingSlash(file.name) === filename,
         );
         if (uploaded) {
-          return { ...f, uri: gatewayURL(res.rootCID, filename) };
+          return [
+            { ...f, uri: gatewayURL(res.rootCID, filename), cdn: true },
+            { ...f, uri: ipfsURI(res.rootCID, filename) },
+          ];
         }
       }
 
       // if the uri doesn't match an uploaded file, return unchanged
-      return f;
+      return [f];
     });
   }
 
@@ -70,8 +76,15 @@ export async function nftStorageUpload(
 function stripLeadingSlash(s: string): string {
   return s.replace(new RegExp('^\\/'), '');
 }
+
 function gatewayURL(cid: string, filename: string): string {
   cid = stripLeadingSlash(cid);
   filename = stripLeadingSlash(filename);
   return new URL(`/ipfs/${cid}/${filename}`, GATEWAY_HOST).toString();
+}
+
+function ipfsURI(cid: string, filename: string): string {
+  cid = stripLeadingSlash(cid);
+  filename = stripLeadingSlash(filename);
+  return `ipfs://${cid}/${filename}`;
 }
