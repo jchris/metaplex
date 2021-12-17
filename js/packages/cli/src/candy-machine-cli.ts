@@ -112,7 +112,7 @@ programCommand('upload')
     if (
       !(
         storage === 'arweave' ||
-        storage == 'nft.storage' ||
+        storage === 'nft.storage' ||
         storage === 'ipfs' ||
         storage === 'aws'
       )
